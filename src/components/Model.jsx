@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ModelView from './ModelView';
@@ -9,6 +9,7 @@ import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber';
 import { View } from '@react-three/drei';
 import { models, sizes } from '../constants';
+import { animationsWithGsapTimeline } from '../utils/animations';
 
 
 const Model = () => {
@@ -31,6 +32,19 @@ const Model = () => {
     //rotation of camera
     const [smallRotation , setSmallRotation] = useState(0);
     const [largeRotation , setLargeRotation] = useState(0);
+
+
+    const tl = gsap.timeline();
+
+    useEffect(()=>{
+        if( size === 'large'){
+            animationsWithGsapTimeline() //passing the props
+        }
+        if( size === 'small'){
+
+        }
+    },[size])
+
 
     useGSAP(() => {
         gsap.to('#heading',{ y: 0, opacity: 1 })
