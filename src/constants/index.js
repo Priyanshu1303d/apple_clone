@@ -10,6 +10,13 @@ import {
   } from "../utils";
   
   export const navLists = ["Store", "Mac", "iPhone", "Support"];
+
+  // export const navLists = [
+  //   { label: 'Store', path: '/' },
+  //   { label: 'Mac', path: '/about' },
+  //   { label: 'iPhone', path: '/contact' },
+  //   { label: 'Support', path: '/Support' },
+  // ];
   
   export const hightlightsSlides = [
     {
